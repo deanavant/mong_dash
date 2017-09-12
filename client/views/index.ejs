@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animal Dashboard</title>
+</head>
+<body>
+	<p><a href="animals/new">Add a new animal</a></p>
+	<h3>Welcome to Mongoos... er Animal Mania!</h3>
+	<h4>Animals currently in Database:</h4>
+	<% for (i in animals) {%>
+		<p>Name:<%=animals[i].name %></p>
+		<p>Height:<%=animals[i].height %></p>
+		<p>Weight:<%=animals[i].weight %></p>
+		<p>Info:<%=animals[i].info %></p>
+		<p><a href="/animals/edit/<%=animals[i]._id %>">Update</a>
+			<a href="/animals/destroy/<%=animals[i]._id %>">Delete</a></p>
+		<% if (i < animals.length - 1) {%>
+			<hr><% }%>
+	<% }%>
+</body>
+</html>
